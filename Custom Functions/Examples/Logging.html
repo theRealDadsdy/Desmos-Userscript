@@ -1,0 +1,10 @@
+<!Note, you have to click on the logging function box and move your cursor with your arrow keys fo the function to work>
+<!Allows you to run (in desmos) "logging(10)", and log 10 to the console>
+<script src = "https://www.desmos.com/api/v1.8/calculator.js?apiKey=Your API Key Here"></script>
+<div id="calculator" style="width: 1000px; height: 600px"; ></div>
+<script src = "Link to Custom Functions Script"></script>
+<script>
+var elt = document.getElementById('calculator');
+var Calc = Desmos.GraphingCalculator(elt);
+newDesFunc("logger", console.log, ["t"]);
+</script>
