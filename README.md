@@ -3,8 +3,10 @@ A Desmos Userscript allowing for the creation of custom functions, and soon stri
 ## Unsolved Issues
 Feel free to give suggestions
 ### Custom Functions
-1. Allow lists as inputs
+None Right Now!
 ### String
 1. Implement them, like, at all
 ## Completed Issues
 1. Make the functions auto-update, so you don't have to update them yourself. (Done by theRealDadsdy)
+2. Allow multiple functions to accept the same named parameter. (Done by theRealDadsdy)
+3. Allow lists as inputs. (Done by theRealDadsdy)
