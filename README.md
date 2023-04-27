@@ -3,7 +3,7 @@ A Desmos Userscript allowing for the creation of custom functions, and soon stri
 ## Unsolved Issues
 Feel free to give suggestions
 ### Custom Functions
-None right now!
+1. Allow lists as inputs
 ### String
 1. Implement them, like, at all
 ## Completed Issues
