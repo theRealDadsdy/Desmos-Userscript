@@ -1,8 +1,9 @@
 # Desmos-Userscript
 A Desmos Userscript allowing for the creation of custom functions, and soon strings
 ## Unsolved Issues
+Feel free to give suggestions
 ### Custom Functions
-None Right Now! Feel free to send suggestions for what to add!
+1. Allow multiple functions to have the same paramater name
 ### String
 1. Implement them, like, at all
 ## Completed Issues
