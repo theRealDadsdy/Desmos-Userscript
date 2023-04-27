@@ -1,12 +1,13 @@
 var funcCount = 0;
 
 function timeout(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function newName(name){
   function applyNames() {
-    /* see https://github.com/jared-hughes/DesThree/blob/master/src/View.js#L66 for more info, including   forcing a rerender */
+    /* see https://github.com/jared-hughes/DesThree/blob/master/src/View.js#L66 for more info, including
+    forcing a rerender */
     const fields = document.querySelectorAll('.dcg-mq-editable-field')
     fields.forEach(field => {
       const opt = field._mqMathFieldInstance.__controller.root.cursor.options;
@@ -33,7 +34,7 @@ async function newDesFunc(name, callback, params=[]){
   Calc.setExpression({id:name, latex:"uni"});
   let ranName = "r"+"_{an"+name+"}";
   Calc.setExpression({id:name+"ran", latex:ranName+"=0", secret: true});
-  params.forEach(val => {Calc.setExpression({id:name + val, latex:"c_{heck" + val + "}=0", secret: true})});
+  params.forEach(val => {Calc.setExpression({id:val, latex:"c_{heck" + val + "}=0", secret: true})});
   await timeout(100);
   const fields = document.querySelectorAll('.dcg-mq-root-block')
   fields.forEach(field => {
@@ -45,28 +46,34 @@ async function newDesFunc(name, callback, params=[]){
     }
   })
   let checks = params.map(val => {return "c_{heck" + val + "}"})
-  params = params.map(val => {return val[0] + (val.length > 1 ? "_{"+val.slice(1) + "}" : "")})
+  let paramNames = params.map(val => {return val[0] + (val.length > 1 ? "_{"+val.slice(1) + "}" : "")})
   let body = ranName + "\\to1";
-  checks.forEach((val, ind) => {body += "," + val + "\\to " + params[ind]});
-  Calc.setExpression({id:name, latex: name + "(" + params.toString() + ")=" + body});
+  checks.forEach((val, ind) => {body += "," + val + "\\to " + paramNames[ind]});
+  let fullFuncText = "\\operatorname{" + name + "}\\left(" + paramNames.toString() + "\\right)=" + body;
+  Calc.setExpression({id:name, latex: fullFuncText, secret: true});
   Calc.observeEvent('change', () => {
     let express = Calc.getExpressions();
     let ran = false;
     let paramsLeft = 0;
-    let paramsToPass = [];
+    let paramsToPass = {};
+    //Checking if the function ran, and getting the parameters
     express.forEach(val => {
       if (val.id == name + "ran" && val.latex == ranName + "=1"){
         Calc.setExpression({id:name+"ran", latex:ranName+"=0"});
         ran = true;
         paramsLeft = params.length;
       }
-      else if (paramsLeft){
-        paramsLeft--;
-        paramsToPass.push(parseInt(val.latex.split("=")[1]))
+      else if (params.includes(val.id)){
+        paramsToPass[val.id]=val.latex.split("=")[1];
       }
     })
     if (ran){
-      callback(...paramsToPass)
+      //Sorting parameters
+      let parameters = [];
+      for (param of params){
+        parameters.push(eval(paramsToPass[param].split('\\left').join('').split('\\right').join('')));
+      }
+      callback(...parameters)
     }
   })
 }
