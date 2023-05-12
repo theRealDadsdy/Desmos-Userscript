@@ -10,5 +10,7 @@ It's a programming language, so it has a way to program it. Input your program a
 5: Pop counter  
 6: Push pointer  
 7: Pop pointer  
+8: Output  
+9: Input  
 any v > 30: Append to commands v  
 (More maybe coming)
