@@ -1,4 +1,3 @@
-eval.call(window, `
 window.onerror = (msg, url, line, col, error) => {
   alert(error.stack);
   alert("Error at " + url + " line " + line + " col " + col);
@@ -38,8 +37,7 @@ function setExpress(lineNum, text){
     Calc.setExpression({latex: text});
   }
 }
-
+alert("ran");
 setTimeout(async ()=>{
   await newDesFunc("set", setExpress, ["lineNum", "text"]);
 }, 100)
-`);
