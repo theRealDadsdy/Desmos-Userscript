@@ -3,10 +3,15 @@ Go to the link, and run the script (potentially multiple times).
 # Programming
 It's a programming language, so it has a way to program it. Input your program as a comma seperated list of numbers.
 ## Specification
+All lists use one-based indexing  
+Command is a list of numbers (starting out empty) that are parsed as ASCII values when evaluated as LaTeX by Desmos  
+Data is an infinite list of values, starting at all 0s  
+Instructions are each a value  
+The data pointer and instruction counter are single values that point respectively to which data value is used and which instruction is next run, and each start at 1  
 For each instruction, when run, if instruction is  
 = 1: Set Command blank  
-= 2: Push data (append to Command the current value of the data/memory list at the data pointer as ASCII values of its digits)  
-= 3: Pop data (set the current value of the data list at the data pointer to the output of the evaluated Command)  
+= 2: Push data (append to Command the current value of Data at the data pointer as ASCII values of its digits)  
+= 3: Pop data (set the current value of Data at the data pointer to the output of the evaluated Command)  
 = 4: Push counter (append to Command the current value of the instruction counter as ASCII values of its digits)  
 = 5: Pop counter (set the current value of the instruction counter to the output of the evaluated Command)  
 = 6: Push pointer (append to Command the current value of the data pointer as ASCII values of its digits)  
