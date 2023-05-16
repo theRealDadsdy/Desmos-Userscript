@@ -13,4 +13,4 @@ For each instruction, when run, if instruction is
 = 7: Pop pointer (set the current value of the data pointer to the output of the evaluated Command)  
 = 8: Output (add the current command output to the displayed output list)  
 = 9: Input (pause until an input is given, and append to Command it's digit's ASCII values)  
-> 30: Append instruction to Command  
+ > 30: Append instruction to Command  
