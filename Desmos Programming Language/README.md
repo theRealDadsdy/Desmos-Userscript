@@ -4,7 +4,7 @@ Go to the link, and run the script (potentially multiple times).
 It's a programming language, so it has a way to program it. Input your program as a comma seperated list of numbers.
 ## Specification
 For each instruction, when run, if instruction is  
-= 1: Clear commands  
+= 1: Set Command blank  
 = 2: Push data (append to Command the current value of the data/memory list at the data pointer as ASCII values of its digits)  
 = 3: Pop data (set the current value of the data list at the data pointer to the output of the evaluated Command)  
 = 4: Push counter (append to Command the current value of the instruction counter as ASCII values of its digits)  
