@@ -9,15 +9,15 @@ Data is an infinite list of values, starting at all 0s
 Instructions are each a value  
 The data pointer and instruction counter are single values that point respectively to which data value is used and which instruction is next run, and each start at 1  
 For each instruction, when run, if instruction is  
-= 1: Set Command blank  
-= 2: Push data (append to Command the current value of Data at the data pointer as ASCII values of its digits)  
-= 3: Pop data (set the current value of Data at the data pointer to the output of the evaluated Command)  
-= 4: Push counter (append to Command the current value of the instruction counter as ASCII values of its digits)  
-= 5: Pop counter (set the current value of the instruction counter to the output of the evaluated Command)  
-= 6: Push pointer (append to Command the current value of the data pointer as ASCII values of its digits)  
-= 7: Pop pointer (set the current value of the data pointer to the output of the evaluated Command)  
-= 8: Output (add the current command output to the displayed output list)  
-= 9: Input (pause until an input is given, and append to Command it's digit's ASCII values)  
+= 1: clear (Set Command blank)  
+= 2: push data (append to Command the current value of Data at the data pointer as ASCII values of its digits)  
+= 3: pop data (set the current value of Data at the data pointer to the output of the evaluated Command)  
+= 4: push counter (append to Command the current value of the instruction counter as ASCII values of its digits)  
+= 5: pop counter (set the current value of the instruction counter to the output of the evaluated Command)  
+= 6: push pointer (append to Command the current value of the data pointer as ASCII values of its digits)  
+= 7: pop pointer (set the current value of the data pointer to the output of the evaluated Command)  
+= 8: output (add the current command output to the displayed output list)  
+= 9: input (pause until an input is given, and append to Command it's digit's ASCII values)  
 \> 30: Append instruction to Command  
 ## More info about Command
 Command is translated into ascii characters and interpreted as a LaTeX math expression. (it is recomended, however to use ( instead of \right(, and same for ), [, ], {, and }.)
