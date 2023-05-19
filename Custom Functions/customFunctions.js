@@ -35,7 +35,7 @@ async function newDesFunc(name, callback, params=[]){
   let ranName = "r"+"_{an"+name+"}";
   Calc.setExpression({id:name+"ran", latex:ranName+"=0", secret: true});
   params.forEach(val => {Calc.setExpression({id:val, latex:"c_{heck" + val + "}=0", secret: true})});
-  await timeout(100);
+  await timeout(200);
   const fields = document.querySelectorAll('.dcg-mq-root-block')
   fields.forEach(field => {
     if (field.children[0].innerHTML == "u" && field.children[1].innerHTML == "n" && field.children[2].innerHTML == "i"){
