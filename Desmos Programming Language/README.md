@@ -13,9 +13,9 @@ For each instruction, when run, if instruction is
 = 2: push data (append to Command the current value of Data at the data pointer as ASCII values of its digits)  
 = 3: pop data (set the current value of Data at the data pointer to the output of the evaluated Command)  
 = 4: push counter (append to Command the current value of the instruction counter as ASCII values of its digits)  
-= 5: pop counter (set the current value of the instruction counter to the output of the evaluated Command)  
+= 5: pop counter (set the value of the instruction counter to the output of the evaluated Command)  
 = 6: push pointer (append to Command the current value of the data pointer as ASCII values of its digits)  
-= 7: pop pointer (set the current value of the data pointer to the output of the evaluated Command)  
+= 7: pop pointer (set the value of the data pointer to the output of the evaluated Command)  
 = 8: output (add the current command output to the displayed output list)  
 = 9: input (pause until an input is given, and append to Command it's digit's ASCII values)  
 \> 30: Append instruction to Command  
