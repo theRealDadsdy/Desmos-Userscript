@@ -36,15 +36,6 @@ async function newDesFunc(name, callback, params=[]){
   Calc.setExpression({id:name+"ran", latex:ranName+"=0", secret: true});
   params.forEach(val => {Calc.setExpression({id:val, latex:"c_{heck" + val + "}=0", secret: true})});
   await timeout(200);
-  const fields = document.querySelectorAll('.dcg-mq-root-block')
-  fields.forEach(field => {
-    if (field.children[0].innerHTML == "u" && field.children[1].innerHTML == "n" && field.children[2].innerHTML == "i"){
-      field.removeChild(field.children[0]); field.removeChild(field.children[0]); field.removeChild(field.children[0]);
-      let newElem = document.createElement("span");
-      field.prepend(newElem);
-      newElem.innerHTML = name;
-    }
-  })
   let checks = params.map(val => {return "c_{heck" + val + "}"})
   let paramNames = params.map(val => {return val[0] + (val.length > 1 ? "_{"+val.slice(1) + "}" : "")})
   let body = ranName + "\\to1";
