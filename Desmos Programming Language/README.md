@@ -11,7 +11,7 @@ The data pointer and instruction counter are single values that point respective
 For each instruction, when run, if instruction is  
 = 1: clear (Set Command blank)  
 = 2: push data (append to Command the current value of Data at the data pointer as ASCII values of its digits)  
-= 3: pop data (set the current value of Data at the data pointer to the output of the evaluated Command)  
+= 3: pop data (set the value of Data at the data pointer to the output of the evaluated Command)  
 = 4: push counter (append to Command the current value of the instruction counter as ASCII values of its digits)  
 = 5: pop counter (set the value of the instruction counter to the output of the evaluated Command)  
 = 6: push pointer (append to Command the current value of the data pointer as ASCII values of its digits)  
