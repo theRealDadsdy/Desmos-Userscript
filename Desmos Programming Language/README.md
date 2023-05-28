@@ -16,10 +16,11 @@ For each instruction, when run, if instruction is
 = 5: pop counter (set the value of the instruction counter to the output of the evaluated Command)  
 = 6: push pointer (append to Command the current value of the data pointer as ASCII values of its digits)  
 = 7: pop pointer (set the value of the data pointer to the output of the evaluated Command)  
-= 8: output (add the current command output to the displayed output list)  
+= 8: output (add the output of the evaluated Command output to the displayed output list)  
 = 9: input (pause until an input is given, and append to Command it's digit's ASCII values)  
 = 10: to (set the _to_ value to the current instruction pointer plus one)  
 = 11: go (set the instruction pointer to the _to_ value)  
+= 12: at (set the _to_ value to the output of the evaluated Command)  
 \> 30: Append instruction to Command  
 ## More info about Command
 Command is translated into ascii characters and interpreted as a LaTeX math expression. (it is recomended, however to use ( instead of \right(, and same for ), [, ], {, and }.)
