@@ -26,4 +26,4 @@ For each instruction, when run, if instruction is
 Command is translated into ascii characters and interpreted as a LaTeX math expression. (it is recomended, however to use ( instead of \left(, and same for ), [, ], {, and }.)
 Any unmatched parenthisis or brackets will have their opposites added to the other side of the expression. Currently the same is not true for braces.
 ## More info about the intepreter
-Parenthesis and brackets automatically get the \left or \right added. When the end of the program is reached, there is an implicit go command.
+Parenthesis and brackets automatically get the \left or \right added. When the end of the program is reached, there is an implicit go command. Also, the begining is the default to value.
