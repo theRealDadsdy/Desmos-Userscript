@@ -23,5 +23,7 @@ For each instruction, when run, if instruction is
 = 12: at/A (set the _to_ value to the output of the evaluated Command)  
 \> 30: Append instruction to Command  
 ## More info about Command
-Command is translated into ascii characters and interpreted as a LaTeX math expression. (it is recomended, however to use ( instead of \right(, and same for ), [, ], {, and }.)
-Any unmatched parenthisis will have their opposites added to the other side of the expression. Currently the same is not true for braces.
+Command is translated into ascii characters and interpreted as a LaTeX math expression. (it is recomended, however to use ( instead of \left(, and same for ), [, ], {, and }.)
+Any unmatched parenthisis or brackets will have their opposites added to the other side of the expression. Currently the same is not true for braces.
+## More info about the intepreter
+Parenthesis and brackets automatically get the \left or \right added. When the end of the program is reached, there is an implicit go command.
