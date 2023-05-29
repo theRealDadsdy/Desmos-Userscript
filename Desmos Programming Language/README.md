@@ -24,4 +24,4 @@ For each instruction, when run, if instruction is
 \> 30: Append instruction to Command  
 ## More info about Command
 Command is translated into ascii characters and interpreted as a LaTeX math expression. (it is recomended, however to use ( instead of \right(, and same for ), [, ], {, and }.)
-Any unmatched parenthisis will have their opposites added to the other side of the expression. Currently the same is not true for brakets and braces.
+Any unmatched parenthisis will have their opposites added to the other side of the expression. Currently the same is not true for braces.
