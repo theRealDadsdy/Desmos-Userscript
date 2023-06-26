@@ -6,8 +6,7 @@ window.onerror = (msg, url, line, col, error) => {
 
 var Calc;
 
-if (Calc){}
-else{
+if (!Calc){
   var elt = document.getElementById('calculator');
   var Calc = Desmos.GraphingCalculator(elt);
 }
